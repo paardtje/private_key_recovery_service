@@ -1,24 +1,20 @@
-# Ambisafe encrypted container decryption
+# Ambisafe encrypted container decryption and private key recovery
 
-This library is developed to make your wallet container decryption as safe as possible. 
-You’ll find the detailed HOWTO bellow.
+This process was developed to make your wallet as safe as possible. It allows recovering private key from a backup of the encrypted container from wallets and ICOs powered by Ambisafe. You have to remember your account password that was used at the service you've got the backup from.
 
-***Security notice: Ambisafe NEVER gets, stores or requests your decrypted data. 
-All the decryption happens inside your PC and should NOT be shared with any third parties!***
+**Security notice: Ambisafe NEVER gets, stores or requests your decrypted data. 
+All the decryption happens inside your web browser and the resulted key should NOT be shared with anybody!
+If somebody asks you to perform the recovery - please contact the support immediately.
+The contents of the container give full access to the coins/tokens/funds on your crypto wallet.
+**
 
-**Follow the next steps to decrypt your wallet container:**
+Follow the next steps to decrypt your wallet container:
 
-1)Download this repository to your local computer by clicking button "Clone or download" > Download ZIP:
-<img src="/img/download_help_pic.png"/>
 
-2)Extract repository to your local computer and open the extracted folder.
+1) Open the page from Github using https://rawgit.com/Ambisafe/private_key_recovery_service/master/src/index.html 
 
-3)In extracted folder open folder ***src***
-
-4)Go to the *src* folder, find file *index.html* and open it with your web browser (avoid using IE browsers).
-
-5)Copy the encrypted container which was emailed to you. 
-Please copy all the container the same way as it’s shown at the example below.
+2) Copy the text of encrypted container which was emailed to you.
+Please copy all the text as it’s shown in the example below.
 Example:
 ```json
 {
@@ -29,15 +25,27 @@ Example:
 }
 ```
 
-6)Paste your encrypted container (1) and your matching password (2) at the html page (check the screenshot below).
+3) Paste the text of encrypted container (1) and your account password (2) at the HTML page (check the screenshot below):
 
 <img src="/img/container_paste_helper.png"/>
 
-7)Press button "Decrypt", the result will be PrivateKey, PublicKey and address.
+4) Press "Decrypt" button, the result will be PrivateKey, PublicKey and address.
 
-8)Save this decrypted data and *never share your decrypted private key with any third parties*. 
+5) Save this decrypted data and **never share your decrypted private key with any third parties**. 
 Keep in mind that the person who has access to your decrypted private key has full control over your assets.
 
-# Using decrypted private key in Mist wallet TODO
+6) The decrypted private key can be used in MyEtherWallet to control the assets on your address.
 
 
+## How to check that the process is safe?
+
+1a) Download this repository to your local computer by clicking button "Clone or download" > Download ZIP:
+<img src="/img/download_help_pic.png"/> 
+
+2) Extract repository archive on your computer and open the extracted folder.
+
+3) In extracted folder open folder *src*
+
+4) In the *src* folder find file *index.html* and open it with your web browser (Chrome is 100% compatible).
+
+You can browse the Javascript and HTML sources that are used on this page to check the decryption algorithm. 
